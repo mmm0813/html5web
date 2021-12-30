@@ -1,0 +1,695 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700&family=Shadows+Into+Light&display=swap');
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url(webfonts/LEMONMILK.otf);
+}
+
+@font-face {
+    font-family: 'fontawesome';
+    src: url(webfonts/fa-solid-900.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 不累加內距與邊框，外距照算 */
+}
+
+body {
+    font-family: Helvetica, Arial, "黑體-繁", 'Heiti TC', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.lightpink {
+    background-color: #ece1e8;
+}
+
+.lightblue {
+    background-color: #ECF5FF;
+}
+
+.lightgreen {
+    background-color: #dfefde;
+}
+
+#gotop {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+#gotop .fas {
+    font-family: 'fontawesome';
+    color: #c7c7c7;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 50px;
+}
+
+/* top bar */
+
+.top_header {
+    height: 100vh;
+    border: solid 25px white;
+    overflow: hidden;
+    position: relative;
+}
+
+.top_box {
+    position: relative;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 40px 0;
+}
+
+.logo {
+    width: 75px;
+}
+
+.top_header nav {
+    display: flex;
+    flex-direction: column;
+    /* 主軸方向-垂直 */
+    align-items: flex-end;
+    /* 副軸方向-水平靠右 */
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+
+/* ⼩型設備 */
+
+@media (max-width:767px) {
+    nav .menu {
+        flex-direction: column;
+    }
+}
+
+
+/* 中型設備 */
+
+@media (min-width:768px) {
+    nav .menu {
+        flex-direction: column;
+    }
+}
+
+
+/* ⼤型設備 */
+
+@media (min-width:992px) {
+    nav .menu {
+        flex-direction: row;
+    }
+}
+
+nav .icon li {
+    width: 35px;
+    /* flex-basis: 35px;,row水平排列則為寬 */
+    margin: 0 0 20px 10px;
+}
+
+nav .menu li {
+    width: 100px;
+    height: 35px;
+}
+
+nav .menu a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+    border: solid 1px transparent;
+}
+
+nav .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.651);
+    border: solid 1px #666;
+}
+/* banner */
+.banner {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner .name h2 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+}
+.banner .name h3 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: .19rem;
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    .banner{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .banner .name {
+        width: 95%;
+        margin-bottom: 25px;
+    }
+    .banner figure {
+        width: 70%;
+    }
+    .banner .name h2{
+        font-size: 2.3rem;
+    }
+    .banner .name h3 {
+        font-size: 1rem;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    .banner figure {
+        width: 60%;
+    }
+    .banner .name {
+        margin-top: -7vh;
+        margin-left: 5%;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:992px) {
+    .banner figure {
+        width: 35%;
+    }
+    .banner .name {
+        margin-top: 20vh;
+        margin-left: 15%;
+    }
+}
+.top_header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: opacity(10%) brightness(200%) saturate(120%);
+}
+
+
+/* 主要內容共用區 */
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    #video{
+        height: 55vh;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    #video{
+        height: 65vh;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:1025px) {
+    #video{
+        height: 100vh;
+    }
+
+}
+section h2 {
+    font-family: 'LEMONMILK';
+    color: #444;
+    font-size: 2rem;
+    margin-top: 50px;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: solid 5px #666;
+}
+
+.list_box {
+    display: flex;
+    width: 80%;
+}
+.item {
+    flex: 1;
+    height: 65vh;
+    margin: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    .list_box {
+        flex-direction: column;
+        width: 95%;
+        height: 80vh;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    .list_box {
+        flex-direction: column;
+        height: 80vh;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:1025px) {
+    .list_box {
+        flex-direction: row;
+    }
+
+}
+
+/* SERVICE區 */
+.service_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+.service_item1 {
+    background-image: url(./images/pt_svc1.jpg);
+}
+
+.service_item2 {
+    background-image: url(./images/pt_svc2.jpg);
+}
+
+.service_item3 {
+    background-image: url(./images/pt_svc3.jpg);
+}
+
+.service_title {
+    display: block;
+    background-color: #00000069;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.service_title h3 {
+    font-size: 1.3rem;
+}
+
+.service_title p {
+    letter-spacing: .1rem;
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* NEWS區 */
+
+#news article {
+    box-shadow: 2px 2px 5px #ddd;
+}
+
+
+#news figure {
+    height: 40%;
+    overflow: hidden;
+}
+
+#news figure img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#news h3 {
+    color: #666;
+    font-size: 1.3rem;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #666;
+}
+
+#news p {
+    margin: 0 30px;
+    line-height: 1.4rem;
+    /* text-align: justify; *//* 齊行 */
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* -webkit-line-clamp: 6; */
+}
+.more {
+    border: solid 1px #666;
+    padding: 5px 10px;
+    display: block;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    #news article:last-child{
+        display: none;
+    }
+    #news h3{
+        margin: 10px;
+    }
+    #news p {
+        -webkit-line-clamp: 2;
+    }
+    .more {
+        margin: 10px auto;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    #news article:last-child{
+        display: none;
+    }
+    #news h3{
+        margin: 10px;
+    }
+    #news p {
+        -webkit-line-clamp: 4;
+    }
+    .more {
+        margin: 20px auto;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:992px) {
+    #news article:last-child{
+        display: block;
+    }
+    #news h3{
+        margin: 20px 30px;
+    }
+    #news p {
+        -webkit-line-clamp: 6;
+    }
+    .more {
+        margin: 30px auto;
+    }
+}
+/* ABOUT區 */
+#about {
+    background-image: url(./images/pt_about.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.about_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 除了預設stretch自動拉伸之外的值，都吃內容的尺寸 */
+    /* width: 60%; */
+    height: 100vh;
+    background-color: rgba(229, 213, 255, 0.6);
+    padding: 0 80px;
+}
+.about_box p {
+    overflow: auto;
+    margin-bottom: 60px;
+    line-height: 1.2rem;
+    color: #666;
+    letter-spacing: .05rem;
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    .about_box {
+        width: 90%;
+        padding: 0 30px;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    .about_box {
+        width: 75%;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:992px) {
+    .about_box {
+        width: 60%;
+    }
+}
+
+/* scrollbox捲軸樣式 */
+
+
+/* .scrollbox {
+    poisition: relative;
+    width: 320px;
+    height: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    overflow: scroll;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  } */
+
+.scrollbox::-webkit-scrollbar {
+    width: 10px;
+    background: #999;
+}
+
+.scrollbox::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.scrollbox::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px;
+    background: #666;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    background: black;
+}
+
+.scrollbox::-webkit-scrollbar-corner {
+    background: #ddd;
+}
+
+
+/* VIDEO區 */
+
+#video div {
+    height: 70vh;
+}
+
+#video video {
+    width: 100%;
+    /* height: 100%; */
+}
+/* ⼩型設備 */
+@media (max-width:767px) {
+    #video video {
+        height: auto;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    #video video {
+        height: auto;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:1025px) {
+    #video video {
+        height: 100%;
+    }
+}
+
+/* CONTACT區 */
+
+#contact {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact_form {
+    display: flex;
+    flex-direction: column;
+}
+#contact_form label {
+    margin: 20px 0 5px;
+    color: #666;
+}
+
+#contact_form input,
+#contact_form textarea {
+    border: solid 1px #94b88f;
+    padding: 10px;
+    border-radius: 5px;
+    color: #90b88f;
+}
+
+.flower_r {
+    width: 330px;
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    transform: rotate(-15deg);
+}
+
+.flower_w {
+    width: 280px;
+    position: absolute;
+    top: 50px;
+    right: -20px;
+    transform: rotate(-25deg);
+}
+
+/* ⼩型設備 */
+@media (max-width:767px) {
+    #contact_form{
+        width: 65%;
+    }
+    .flower_r,.flower_w {
+        display: none;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    #contact_form{
+        width: 55%;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:1025px) {
+    #contact_form{
+        width: 35%;
+    }
+}
+
+/* css button 抖動按鈕 */
+
+button {
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* text-transform: uppercase; */
+    height: 60px;
+    width: 210px;
+    /* opacity: 1; */
+    background-color: #ffffff;
+    border: 1px solid rgb(38, 82, 13);
+    margin: 50px auto 0;
+}
+
+button span {
+    color: rgb(38, 82, 13);
+    font-size: 12px;
+    /* font-weight: 500; */
+    letter-spacing: 0.7px;
+}
+
+button:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px 20px 20px;
+}
+
+
+/* ⼩型設備 */
+@media (max-width:767px) {
+    footer .menu{
+        display: none;
+    }
+}
+/* 中型設備 */
+@media (min-width:768px) {
+    footer .menu{
+        display: none;
+    }
+}
+/* ⼤型設備 */
+@media (min-width:992px) {
+    footer .menu{
+        display: flex;
+    }
+}
